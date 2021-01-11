@@ -67,12 +67,12 @@ public class LiveVideoBroadcasterActivity extends AppCompatActivity {
     String currentPosture="No Posture Detected";
     VideoView videoView;
 
-    TextView mPosture;
+    TextView mSeverity;
     TextView mConfidence;
     private static final String TAG = LiveVideoBroadcasterActivity.class.getSimpleName();
     private ViewGroup mRootView;
     boolean mIsRecording = false;
-    boolean mIsMuted = false;
+    boolean mIsMuted = true;
     private EditText mStreamNameEditText;
     private Timer mTimer;
     private long mElapsedTime;
@@ -127,9 +127,14 @@ public class LiveVideoBroadcasterActivity extends AppCompatActivity {
         mTimerHandler = new TimerHandler();
         //mStreamNameEditText = (EditText) findViewById(R.id.stream_name_edit_text);
 
+        //Get severity level
+        severityLevelIntent=getIntent();
+        severityLevel=severityLevelIntent.getIntExtra(SeverityLevel.EXTRA_SEVERITY,1);
+
         mConfidence=findViewById(R.id.textConfidence);
-        mPosture=findViewById(R.id.textPosture);
+        mSeverity=findViewById(R.id.textSeverity);
         videoView=findViewById(R.id.videoView2);
+
 
         mRootView = (ViewGroup)findViewById(R.id.root_layout);
         mSettingsButton = (ImageButton)findViewById(R.id.settings_button);
@@ -137,9 +142,8 @@ public class LiveVideoBroadcasterActivity extends AppCompatActivity {
 
         mBroadcastControlButton = (Button) findViewById(R.id.toggle_broadcasting);
 
-        //Get severity level
-        severityLevelIntent=getIntent();
-        severityLevel=severityLevelIntent.getIntExtra(SeverityLevel.EXTRA_SEVERITY,1);
+
+        mSeverity.setText(String.valueOf(severityLevel));
 
         // Configure the GLSurfaceView.  This will start the Renderer thread, with an
         // appropriate EGL activity.

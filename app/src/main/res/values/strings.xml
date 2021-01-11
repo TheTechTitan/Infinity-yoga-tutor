@@ -1,7 +1,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">YogaCorrectionApp</string>
     <string name="live_indicator">on-air</string>
-    <string name="start_broadcasting">Begin Session</string>
+    <string name="start_broadcasting">Begin</string>
     <string name="stream_name">Stream Name</string>
     <string name="nocamera">No camera exists in your device</string>
     <string name="camera_not_running_properly">Camera is not running properly</string>
