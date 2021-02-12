@@ -5,62 +5,73 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/severity_level_bg"
+    android:backgroundTint="#32FFFFFF"
     tools:context=".SeverityLevel">
 
     <Button
         android:id="@+id/beginnerBtn"
-        android:layout_width="250dp"
-        android:layout_height="65dp"
+        android:layout_width="165dp"
+        android:layout_height="110dp"
+        android:background="@drawable/yoga_beginner"
+        android:fontFamily="@font/cherry_cream_soda"
+        android:gravity="bottom|center"
         android:text="BEGINNER"
-        android:textColor="#4CAF50"
+        android:textColor="#1593C5"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.432" />
+        app:layout_constraintVertical_bias="0.206" />
 
     <Button
         android:id="@+id/intermediateBtn"
-        android:layout_width="250dp"
-        android:layout_height="65dp"
+        android:layout_width="165dp"
+        android:layout_height="127dp"
+        android:background="@drawable/yoga_intermediate"
+        android:fontFamily="@font/cherry_cream_soda"
+        android:gravity="bottom|center"
         android:text="INTERMEDIATE"
-        android:textColor="#FF8C00"
+        android:textColor="#7F228F"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.65" />
+        app:layout_constraintVertical_bias="0.566" />
 
     <Button
         android:id="@+id/expertBtn"
-        android:layout_width="250dp"
-        android:layout_height="65dp"
+        android:layout_width="165dp"
+        android:layout_height="110dp"
+        android:background="@drawable/yoga_expert"
+        android:fontFamily="@font/cherry_cream_soda"
+        android:gravity="bottom|center"
         android:text="EXPERT"
-        android:textColor="#F44336"
+        android:textColor="#CA281C"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.855" />
+        app:layout_constraintVertical_bias="0.937" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="341dp"
+        android:layout_height="43dp"
+        android:fontFamily="@font/iceberg"
+        android:gravity="center"
         android:text="Choose Severity Level"
         android:textColor="#171616"
-        android:textSize="20sp"
+        android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.453"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25" />
+        app:layout_constraintVertical_bias="0.065" />
 </androidx.constraintlayout.widget.ConstraintLayout>

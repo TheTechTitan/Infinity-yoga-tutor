@@ -7,49 +7,52 @@
     android:background="#FFFFFF"
     tools:context=".MainActivity">
 
-    <Button
+    <ImageButton
         android:id="@+id/SignOutBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="63dp"
+        android:layout_height="63dp"
+        android:background="@drawable/ic_sign_out"
         android:onClick="signOut"
-        android:text="Sign Out"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintHorizontal_bias="0.92"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.06" />
 
     <Button
         android:id="@+id/StartBtn"
-        android:layout_width="101dp"
-        android:layout_height="94dp"
-        android:background="@drawable/start_session_btn_bg"
-        android:backgroundTint="#4C838A"
-        android:fontFamily="monospace"
+        android:layout_width="168dp"
+        android:layout_height="147dp"
+        android:background="@drawable/yin_yoga"
+        android:backgroundTint="#4AB134"
+        android:fontFamily="serif-monospace"
+        android:gravity="bottom|center"
         android:shadowColor="#000000"
-        android:text="START SESSION"
-        android:textColor="#FFFFFF"
+        android:text="START"
+        android:textColor="#078E0D"
         android:textColorHighlight="#FFFFFF"
         android:textColorHint="#FFFFFF"
         android:textColorLink="#FFFFFF"
-        android:textSize="16sp"
-        android:textStyle="normal"
+        android:textSize="25sp"
+        android:textStyle="normal|bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.543"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.795" />
+        app:layout_constraintVertical_bias="0.808" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="216dp"
-        android:layout_height="203dp"
+        android:layout_width="259dp"
+        android:layout_height="234dp"
+        android:foregroundGravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.301"
+        app:layout_constraintVertical_bias="0.339"
         app:srcCompat="@drawable/infinity_yoga" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,7 +15,7 @@ public class UserController {
     public UserController() {
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.4:5000/")
+                .baseUrl("https://86c1b34a4bb3.ngrok.io/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

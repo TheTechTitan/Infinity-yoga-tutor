@@ -10,7 +10,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.content.res.ColorStateList;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.hardware.Camera;
 import android.net.Uri;
 import android.opengl.GLSurfaceView;
@@ -142,14 +144,37 @@ public class LiveVideoBroadcasterActivity extends AppCompatActivity {
 
         mBroadcastControlButton = (Button) findViewById(R.id.toggle_broadcasting);
 
-
-        mSeverity.setText(String.valueOf(severityLevel));
+        SetSeverity(severityLevel);
 
         // Configure the GLSurfaceView.  This will start the Renderer thread, with an
         // appropriate EGL activity.
         mGLView = (GLSurfaceView) findViewById(R.id.cameraPreview_surfaceView);
         if (mGLView != null) {
             mGLView.setEGLContextClientVersion(2);     // select GLES 2.0
+        }
+
+        Log.d("Testt current old","android.resource://"+getPackageName()+"/"+R.raw.bhujangasana);
+        Log.d("Testt current old","android.resource://"+getPackageName()+"/"+R.raw.padmasana);
+        Log.d("Testt current old","android.resource://"+getPackageName()+"/"+R.raw.shavasana);
+        Log.d("Testt current old","android.resource://"+getPackageName()+"/"+R.raw.vrikshasana);
+        Log.d("Testt current old","android.resource://"+getPackageName()+"/"+R.raw.trikonasana);
+        Log.d("Testt current old","android.resource://"+getPackageName()+"/"+R.raw.tadasana);
+        Log.d("Testt current old","android.resource://"+getPackageName()+"/"+R.raw.idle);
+        Log.d("Testt current old","android.resource://"+getPackageName()+"/"+R.raw.personnotfound);
+        Log.d("Testt current old","android.resource://"+getPackageName()+"/"+R.raw.personnotfullyinframe);
+        Log.d("Testt current old","android.resource://"+getPackageName()+"/"+R.raw.predicting);
+    }
+
+    public void SetSeverity(int severityLevel){
+        if(severityLevel==1){
+            mSeverity.setText("Beginner");
+            mSeverity.setTextColor(Color.parseColor("#1593C5"));
+        }else if(severityLevel==2){
+            mSeverity.setText("Intermediate");
+            mSeverity.setTextColor(Color.parseColor("#7F228F"));
+        }else{
+            mSeverity.setText("Expert");
+            mSeverity.setTextColor(Color.parseColor("#CA281C"));
         }
     }
 
@@ -161,19 +186,10 @@ public class LiveVideoBroadcasterActivity extends AppCompatActivity {
             mConfidence.setText(title);
 
             if(!currentPosture.equals(message)){
+
+                currentPosture=message;
+
                 videoView.setVideoPath("android.resource://"+getPackageName()+"/"+message);
-
-                Log.d("Testt current old","android.resource://"+getPackageName()+"/"+R.raw.bhujangasana);
-                Log.d("Testt current old","android.resource://"+getPackageName()+"/"+R.raw.padmasana);
-                Log.d("Testt current old","android.resource://"+getPackageName()+"/"+R.raw.shavasana);
-                Log.d("Testt current old","android.resource://"+getPackageName()+"/"+R.raw.vrikshasana);
-                Log.d("Testt current old","android.resource://"+getPackageName()+"/"+R.raw.trikonasana);
-                Log.d("Testt current old","android.resource://"+getPackageName()+"/"+R.raw.tadasana);
-                Log.d("Testt current old","android.resource://"+getPackageName()+"/"+R.raw.idle);
-                Log.d("Testt current old","android.resource://"+getPackageName()+"/"+R.raw.personnotfound);
-                Log.d("Testt current old","android.resource://"+getPackageName()+"/"+R.raw.personnotfullyinframe);
-                Log.d("Testt current old","android.resource://"+getPackageName()+"/"+R.raw.predicting);
-
                 videoView.start();
             }
         }
@@ -329,6 +345,7 @@ public class LiveVideoBroadcasterActivity extends AppCompatActivity {
                                 mStreamLiveStatus.setVisibility(View.VISIBLE);
 
                                 mBroadcastControlButton.setText(R.string.stop_broadcasting);
+                                mBroadcastControlButton.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#B5F85521")));
                                 mSettingsButton.setVisibility(View.GONE);
                                 startTimer();//start the recording duration
                             }
@@ -372,6 +389,7 @@ public class LiveVideoBroadcasterActivity extends AppCompatActivity {
     public void triggerStopRecording() {
         if (mIsRecording) {
             mBroadcastControlButton.setText(R.string.start_broadcasting);
+            mBroadcastControlButton.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#B54CAF50")));
 
             mStreamLiveStatus.setVisibility(View.GONE);
             mStreamLiveStatus.setText(R.string.live_indicator);

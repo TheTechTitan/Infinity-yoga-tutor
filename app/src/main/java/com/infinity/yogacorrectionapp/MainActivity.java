@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button mStartBtn;
 
-    public static final String RTMP_BASE_URL = "rtmp://192.168.1.4:1935/live/";
+    public static final String RTMP_BASE_URL = "rtmp://192.168.137.243:1935/live/";
     //public static final String RTMP_BASE_URL = "rtmp://192.168.1.5/LiveApp/";
 
     @Override
